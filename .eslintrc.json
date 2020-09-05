@@ -5,10 +5,10 @@
   },
   "extends": [
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
     "airbnb",
-    "prettier/@typescript-eslint"
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -36,7 +36,9 @@
         "ts": "never",
         "tsx": "never"
       }
-    ]
+    ],
+    "react/jsx-props-no-spreading": "off",
+    "react/prop-types": "off"
   },
   "settings": {
     "import/resolver": {

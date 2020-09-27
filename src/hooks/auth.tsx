@@ -6,13 +6,19 @@ interface SignInCredentials {
   password: string;
 }
 
+interface User {
+  id: string;
+  name: string;
+  avatar_url: string;
+}
+
 interface AuthState {
-  user: Record<string, unknown>;
+  user: User;
   token: string;
 }
 
 interface AuthContextData {
-  user: Record<string, unknown>;
+  user: User;
   signIn(credentials: SignInCredentials): Promise<void>;
   signOut(): void;
 }
@@ -25,6 +31,8 @@ export const AuthProvider: React.FC = ({ children }) => {
     const token = localStorage.getItem('@GoBarber:token');
 
     if (user && token) {
+      api.defaults.headers.authorization = `Bearer ${token}`;
+
       return { user: JSON.parse(user), token };
     }
 
@@ -38,6 +46,8 @@ export const AuthProvider: React.FC = ({ children }) => {
 
     localStorage.setItem('@GoBarber:user', JSON.stringify(user));
     localStorage.setItem('@GoBarber:token', token);
+
+    api.defaults.headers.authorization = `Bearer ${token}`;
 
     setData({ user, token });
   }, []);

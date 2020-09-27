@@ -75,9 +75,19 @@ export const Profile = styled.div`
       color: #999591;
     }
 
-    strong {
+    a {
       color: #ff9000;
-      font-weight: 500;
+      text-decoration: none;
+
+      transition: color 0.2s;
+
+      &:hover {
+        color: ${shade(0.2, '#ff9900')};
+      }
+
+      strong {
+        font-weight: 500;
+      }
     }
   }
 `;

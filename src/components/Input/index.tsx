@@ -38,7 +38,12 @@ const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
   }, []);
 
   return (
-    <Container isError={!!error} isFocused={isFocused} isFilled={isFilled}>
+    <Container
+      isError={!!error}
+      isFocused={isFocused}
+      isFilled={isFilled}
+      data-testid="input-container"
+    >
       {Icon && <Icon />}
       <input
         defaultValue={defaultValue}

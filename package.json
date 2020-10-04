@@ -59,6 +59,7 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/react-hooks": "^3.4.2",
     "@types/date-fns": "^2.6.0",
     "@types/query-string": "^6.3.0",
     "@types/react-router-dom": "^5.1.5",
@@ -77,6 +78,7 @@
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.1.0",
     "jest-styled-components": "^7.0.3",
-    "prettier": "^2.1.1"
+    "prettier": "^2.1.1",
+    "react-test-renderer": "^16.13.1"
   }
 }
